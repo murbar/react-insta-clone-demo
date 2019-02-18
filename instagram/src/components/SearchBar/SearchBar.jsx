@@ -6,7 +6,7 @@ class SearchBar extends React.Component {
     this.state = {};
   }
   render() {
-    return <div>Search bar</div>;
+    return <div className="search-bar">Search bar</div>;
   }
 }
 
