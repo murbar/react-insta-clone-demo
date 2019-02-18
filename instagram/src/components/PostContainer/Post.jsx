@@ -4,7 +4,6 @@ import './Post.css';
 const Post = ({ post }) => {
   return (
     <div className="post-container-post">
-      {post.username}
       <div className="post-head">
         <img src={post.thumbnailUrl} alt={post.username} />
         {post.username}

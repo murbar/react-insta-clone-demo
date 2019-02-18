@@ -1,2 +1,29 @@
 .post-container-post {
 }
+
+.post-container-post .post-head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  padding: 0 0 0 4rem;
+  font-weight: bold;
+  /* font-size: 1rem;
+  line-height: 1rem; */
+}
+
+.post-container-post .post-head img {
+  width: 2rem;
+  position: absolute;
+  top: calc(50% - 1rem);
+  left: 1rem;
+  border-radius: 50%;
+}
+
+.post-container-post .post-body img {
+  width: 100%;
+}
+
+.post-container-post .post-foot {
+  padding: 1rem;
+}
