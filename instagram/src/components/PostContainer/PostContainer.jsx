@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
+import Post from './Post';
 
 class PostContainer extends React.Component {
   constructor(props) {
@@ -10,7 +11,8 @@ class PostContainer extends React.Component {
     const { post } = this.props;
     return (
       <div className="post-container">
-        {post.username}
+        <Post post={post} />
+        <div className="post-time">{post.timestamp}</div>
         <CommentSection comments={post.comments} />
       </div>
     );
