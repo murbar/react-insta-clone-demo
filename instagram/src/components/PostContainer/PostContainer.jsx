@@ -2,6 +2,7 @@ import React from 'react';
 import Moment from 'react-moment';
 import CommentSection from '../CommentSection/CommentSection';
 import Post from './Post';
+import './PostContainer.css';
 
 class PostContainer extends React.Component {
   constructor(props) {

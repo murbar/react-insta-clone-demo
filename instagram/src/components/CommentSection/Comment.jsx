@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Comment.css';
 
 const Comment = ({ data }) => {
-  return <div className="comments-section-comment">{data.text}</div>;
+  return <div className="comment-section-comment">{data.text}</div>;
 };
 
 export default Comment;

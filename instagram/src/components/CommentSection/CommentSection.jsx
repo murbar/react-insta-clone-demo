@@ -1,5 +1,6 @@
 import React from 'react';
 import Comment from './Comment';
+import './CommentSection.css';
 
 class CommentSection extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class CommentSection extends React.Component {
   render() {
     const { comments } = this.props;
     return (
-      <div className="comments-section">
+      <div className="comment-section">
         {comments.map(c => (
           <Comment data={c} key={c.text} />
         ))}

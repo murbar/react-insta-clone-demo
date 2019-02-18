@@ -1,0 +1,5 @@
+.post-container {
+  border: 1px solid #ddd;
+  box-shadow: 0 0 0.3rem #ddd;
+  border-radius: 0.2rem;
+}
