@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Comment.css';
+import './comments.css';
 
 const Comment = ({ data }) => {
   return (

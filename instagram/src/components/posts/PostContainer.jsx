@@ -1,9 +1,9 @@
 import React from 'react';
 import Moment from 'react-moment';
 import PropTypes from 'prop-types';
-import CommentSection from '../comments/CommentSection';
+import CommentSection from '../comments/Comments';
 import Post from './Post';
-import './PostContainer.css';
+import './posts.css';
 
 const PostContainer = ({ post }) => {
   return (
