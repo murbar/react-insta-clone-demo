@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Moment from 'react-moment';
 import PropTypes from 'prop-types';
 import CommentsContainer from '../comments/CommentsContainer';
@@ -6,7 +6,19 @@ import Post from './Post';
 import './posts.css';
 import AddComment from '../comments/AddComment';
 
-const PostContainer = ({ post }) => {
+const PostContainer = props => {
+  const [post, setPost] = useState(props.post);
+
+  const addComment = comment => {
+    const newComment = {
+      username: 'murbar',
+      text: comment
+    };
+    const newPost = { ...post };
+    newPost.comments.push(newComment);
+    setPost(newPost);
+  };
+
   return (
     <div className="post-container">
       <Post post={post} />
@@ -16,7 +28,7 @@ const PostContainer = ({ post }) => {
           {post.timestamp}
         </Moment>
       </div>
-      <AddComment />
+      <AddComment addComment={addComment} />
     </div>
   );
 };
