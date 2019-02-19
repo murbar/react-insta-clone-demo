@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './posts.css';
 
-const Post = ({ post }) => {
+const Post = props => {
+  const [post, setPost] = useState(props.post);
+  const [liked, setLiked] = useState(false);
+
+  const toggleLike = () => {
+    setLiked(prevProp => !prevProp);
+    const updatedPost = { ...post };
+    if (liked) {
+      updatedPost.likes--;
+    } else {
+      updatedPost.likes++;
+    }
+    setPost(updatedPost);
+  };
+
+  const likeButtonText = liked ? 'Unlike' : 'Like';
+
   return (
     <div className="post-container-post">
       <div className="post-head">
@@ -11,7 +27,13 @@ const Post = ({ post }) => {
       <div className="post-body">
         <img src={post.imageUrl} alt="" />
       </div>
-      <div className="post-foot">{post.likes} likes</div>
+      <div className="post-foot">
+        <div className="post-controls">
+          <button onClick={toggleLike}>{likeButtonText}</button>{' '}
+          <button title="Add comment">Comment</button>
+        </div>
+        {post.likes} likes
+      </div>
     </div>
   );
 };
