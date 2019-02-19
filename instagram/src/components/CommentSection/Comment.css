@@ -1,2 +1,7 @@
 .comment-section-comment {
+  margin-bottom: 0.3rem;
+}
+
+.comment-section-comment span {
+  font-weight: bold;
 }
