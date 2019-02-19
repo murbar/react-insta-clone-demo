@@ -2,7 +2,7 @@ import React from 'react';
 import Comment from './Comment';
 import './comments.css';
 
-class CommentSection extends React.Component {
+class CommentsContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -22,8 +22,8 @@ class CommentSection extends React.Component {
   }
 }
 
-export default CommentSection;
+export default CommentsContainer;
 
-CommentSection.defaultProps = {
+CommentsContainer.defaultProps = {
   comments: []
 };
