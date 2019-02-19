@@ -23,3 +23,7 @@ class CommentSection extends React.Component {
 }
 
 export default CommentSection;
+
+CommentSection.defaultProps = {
+  comments: []
+};
