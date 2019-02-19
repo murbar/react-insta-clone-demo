@@ -1,5 +1,6 @@
 import React from 'react';
 import Comment from './Comment';
+import AddComment from './AddComment';
 import './CommentSection.css';
 
 class CommentSection extends React.Component {
@@ -17,6 +18,7 @@ class CommentSection extends React.Component {
         {comments.map(c => (
           <Comment data={c} key={c.text} />
         ))}
+        <AddComment />
       </div>
     );
   }
