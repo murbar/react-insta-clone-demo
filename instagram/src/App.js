@@ -5,11 +5,17 @@ import PostContainer from './components/PostContainer/PostContainer';
 import './App.css';
 
 class App extends Component {
+  state = { posts: [] };
+
+  componentDidMount() {
+    this.setState({ posts: dummyData });
+  }
+
   render() {
     return (
       <div className="App">
         <SearchBar />
-        {dummyData.map(p => (
+        {this.state.posts.map(p => (
           <PostContainer post={p} key={p.timestamp} />
         ))}
       </div>
@@ -18,3 +24,13 @@ class App extends Component {
 }
 
 export default App;
+
+/* 
+- feather icons
+  - user
+  - heart
+  - compass
+  - search
+  - message-circle
+  - more-horizontal
+*/
