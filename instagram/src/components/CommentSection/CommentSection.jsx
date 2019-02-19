@@ -9,6 +9,9 @@ class CommentSection extends React.Component {
   }
   render() {
     const { comments } = this.props;
+
+    if (!comments.length) return null;
+
     return (
       <div className="comment-section">
         {comments.map(c => (
