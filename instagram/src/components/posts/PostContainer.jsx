@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import CommentSection from '../comments/Comments';
 import Post from './Post';
 import './posts.css';
+import AddComment from '../comments/AddComment';
 
 const PostContainer = ({ post }) => {
   return (
@@ -15,6 +16,7 @@ const PostContainer = ({ post }) => {
           {post.timestamp}
         </Moment>
       </div>
+      <AddComment />
     </div>
   );
 };

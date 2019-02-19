@@ -18,7 +18,6 @@ class CommentSection extends React.Component {
         {comments.map(c => (
           <Comment data={c} key={c.text} />
         ))}
-        <AddComment />
       </div>
     );
   }
