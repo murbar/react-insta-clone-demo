@@ -1,7 +1,7 @@
 import React from 'react';
 import Moment from 'react-moment';
 import PropTypes from 'prop-types';
-import CommentSection from '../CommentSection/CommentSection';
+import CommentSection from '../comments/CommentSection';
 import Post from './Post';
 import './PostContainer.css';
 
