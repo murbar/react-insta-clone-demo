@@ -4,7 +4,7 @@ import './comments.css';
 
 const Comment = ({ data }) => {
   return (
-    <div className="comment-section-comment">
+    <div className="comments--comment">
       <span>{data.username}</span> {data.text}
     </div>
   );

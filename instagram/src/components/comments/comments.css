@@ -1,11 +1,11 @@
-.comment-section {
+.comments {
   padding: 1rem;
 }
 
-.comment-section-comment {
+.comments--comment {
   margin-bottom: 0.3rem;
 }
 
-.comment-section-comment span {
+.comments--comment span {
   font-weight: bold;
 }

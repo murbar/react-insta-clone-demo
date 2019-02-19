@@ -9,7 +9,7 @@ const AddComment = props => {
   };
 
   return (
-    <div className="comment-section-add-comment">
+    <div className="comments--add-comment">
       <input type="text" placeholder="Add a comment..." value={inputValue} onChange={onChange} />
     </div>
   );

@@ -14,7 +14,7 @@ class CommentSection extends React.Component {
     if (!comments.length) return null;
 
     return (
-      <div className="comment-section">
+      <div className="comments">
         {comments.map(c => (
           <Comment data={c} key={c.text} />
         ))}
