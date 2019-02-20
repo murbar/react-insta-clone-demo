@@ -11,7 +11,7 @@ const Post = props => {
 
   const handleAddComment = comment => {
     const newComment = {
-      username: 'murbar',
+      username: localStorage.getItem('username'),
       text: comment
     };
     const newPost = { ...post };
