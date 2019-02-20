@@ -30,6 +30,10 @@
   outline: none;
 }
 
+.search-bar .search input:focus::placeholder {
+  color: transparent;
+}
+
 .search-bar .logout {
   text-align: right;
 }
