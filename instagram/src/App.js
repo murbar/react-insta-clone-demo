@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import dummyData from './dummy-data';
 import SearchBar from './components/common/SearchBar';
-import PostContainer from './components/posts/PostContainer';
+import PostsList from './components/posts/PostsList';
 import './App.css';
 
 class App extends Component {
@@ -32,29 +32,13 @@ class App extends Component {
     });
   };
 
-  // currently showing all when search term not found
   render() {
     const { posts, filteredPosts, searchTerm } = this.state;
-    // const displayPosts = filteredPosts ? filteredPosts : posts;
-    let displayedPosts = posts;
-    if (searchTerm && !filteredPosts) {
-      return (
-        <div className="App">
-          <SearchBar onFilter={this.filterPosts} />
-          <div className="no-results">No results for "{searchTerm}".</div>
-        </div>
-      );
-    }
-    if (filteredPosts) {
-      displayedPosts = filteredPosts;
-    }
-
+    // const displayedPosts = filteredPosts ? filteredPosts : posts;
     return (
       <div className="App">
         <SearchBar onFilter={this.filterPosts} />
-        {displayedPosts.map(p => (
-          <PostContainer post={p} key={p.timestamp} />
-        ))}
+        <PostsList posts={posts} filteredPosts={filteredPosts} searchTerm={searchTerm} />
       </div>
     );
   }
