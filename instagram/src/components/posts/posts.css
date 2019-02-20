@@ -53,3 +53,9 @@
   height: 2.5rem;
   cursor: pointer;
 }
+
+.posts-list--no-results,
+.posts-list--results-count {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
