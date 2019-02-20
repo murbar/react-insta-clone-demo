@@ -6,11 +6,17 @@ const SearchBar = ({ onFilterPosts }) => {
     onFilterPosts(e.target.value);
   };
 
+  const handleLogout = e => {
+    localStorage.removeItem('username');
+    window.location.reload();
+  };
+
   return (
     <div className="search-bar">
       logo
       <input type="search" placeholder="Search" onChange={handleChange} />
       icons
+      <button onClick={handleLogout}>Logout</button>
     </div>
   );
 };
