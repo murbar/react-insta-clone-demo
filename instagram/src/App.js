@@ -34,7 +34,7 @@ class App extends Component {
 
   render() {
     const { posts, filteredPosts, searchTerm } = this.state;
-    // const displayedPosts = filteredPosts ? filteredPosts : posts;
+
     return (
       <div className="App">
         <SearchBar onFilter={this.filterPosts} />
@@ -47,6 +47,13 @@ class App extends Component {
 export default App;
 
 /* 
+TODO
+- fuzzy search with https://fusejs.io/
+- add and style iconography
+- style search bar
+- style post controls
+- persist to localStorage
+- delete comment functionality
 - feather icons
   - user
   - heart
