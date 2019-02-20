@@ -1,44 +1,14 @@
-import React, { Component } from 'react';
-import dummyData from './dummy-data';
-import SearchBar from './components/common/SearchBar';
-import PostsList from './components/posts/PostsList';
+import React from 'react';
+import PostsPage from './components/posts/PostsPage';
 import './App.css';
 
-class App extends Component {
-  state = { posts: [], filteredPosts: null };
-
-  componentDidMount() {
-    this.setState({ posts: dummyData });
-  }
-
-  handleFilterPosts = searchTerm => {
-    if (!searchTerm) {
-      this.setState({
-        filteredPosts: null,
-        searchTerm: null
-      });
-      return;
-    }
-
-    let filtered = this.state.posts.filter(p => {
-      const normalizedUsername = p.username.toLowerCase();
-      const normalizedSearchTerm = searchTerm.toLowerCase();
-      return normalizedUsername.includes(normalizedSearchTerm);
-    });
-    filtered = filtered.length ? filtered : null;
-    this.setState({
-      filteredPosts: filtered,
-      searchTerm
-    });
-  };
+class App extends React.Component {
+  state = {};
 
   render() {
-    const { posts, filteredPosts, searchTerm } = this.state;
-
     return (
       <div className="App">
-        <SearchBar onFilterPosts={this.handleFilterPosts} />
-        <PostsList posts={posts} filteredPosts={filteredPosts} searchTerm={searchTerm} />
+        <PostsPage />
       </div>
     );
   }
