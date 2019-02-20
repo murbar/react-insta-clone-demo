@@ -19,7 +19,7 @@ const PostBody = props => {
   const likeButtonText = liked ? 'Unlike' : 'Like';
 
   return (
-    <div className="post-container-post">
+    <div className="post--container">
       <div className="post-head">
         <img src={post.thumbnailUrl} alt={post.username} />
         {post.username}

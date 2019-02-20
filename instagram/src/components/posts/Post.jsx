@@ -20,10 +20,10 @@ const Post = props => {
   };
 
   return (
-    <div className="post-container">
+    <div className="post">
       <PostBody post={post} />
       <CommentsList comments={post.comments} />
-      <div className="post-time">
+      <div className="post--time">
         <Moment fromNow parse="MMMM Do YYYY, hh:mm:ss a">
           {post.timestamp}
         </Moment>
