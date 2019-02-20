@@ -1,5 +1,6 @@
 import React from 'react';
 import PostsPage from './components/posts/PostsPage';
+import authenticate from './authentication/authenticate';
 import './App.css';
 
 class App extends React.Component {
