@@ -17,6 +17,7 @@ const PostBody = props => {
   };
 
   const likeButtonText = liked ? 'Unlike' : 'Like';
+  const likeButtonImgSrc = liked ? '/heart-filled.svg' : '/heart.svg';
 
   return (
     <div className="post--container">
@@ -29,8 +30,9 @@ const PostBody = props => {
       </div>
       <div className="post-foot">
         <div className="post-controls">
-          <button onClick={toggleLike}>{likeButtonText}</button>{' '}
-          <button title="Add comment">Comment</button>
+          <button className="like-button" onClick={toggleLike}>
+            <img src={likeButtonImgSrc} alt={likeButtonText} />
+          </button>
         </div>
         {post.likes} likes
       </div>
