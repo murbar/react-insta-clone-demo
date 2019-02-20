@@ -13,10 +13,18 @@ const SearchBar = ({ onFilterPosts }) => {
 
   return (
     <div className="search-bar">
-      logo
-      <input type="search" placeholder="Search" onChange={handleChange} />
-      icons
-      <button onClick={handleLogout}>Logout</button>
+      <div className="logo">
+        Instaclone{' '}
+        <span role="img" aria-label="Camera icon">
+          📸
+        </span>
+      </div>
+      <div className="search">
+        <input type="search" placeholder="Search" onChange={handleChange} />
+      </div>
+      <div className="logout">
+        <button onClick={handleLogout}>Logout</button>
+      </div>
     </div>
   );
 };
