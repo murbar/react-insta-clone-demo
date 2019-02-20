@@ -1,11 +1,11 @@
 import React from 'react';
 import PostsPage from './components/posts/PostsPage';
 import authenticate from './authentication/authenticate';
+import LoginPage from './components/login/LoginPage';
 import './App.css';
 
 class App extends React.Component {
-  state = {};
-
+  // state = {};
   render() {
     return (
       <div className="App">
@@ -15,7 +15,7 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default authenticate(App)(LoginPage);
 
 /* 
 TODO
