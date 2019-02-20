@@ -9,7 +9,7 @@ import AddComment from '../comments/AddComment';
 const Post = props => {
   const [post, setPost] = useState(props.post);
 
-  const addComment = comment => {
+  const handleAddComment = comment => {
     const newComment = {
       username: 'murbar',
       text: comment
@@ -28,7 +28,7 @@ const Post = props => {
           {post.timestamp}
         </Moment>
       </div>
-      <AddComment addComment={addComment} />
+      <AddComment onAddComment={handleAddComment} />
     </div>
   );
 };

@@ -1,23 +1,28 @@
 import React, { useState } from 'react';
 import './comments.css';
 
-const AddComment = ({ addComment }) => {
+const AddComment = ({ onAddComment }) => {
   const [inputValue, setInputValue] = useState('');
 
-  const onChange = e => {
+  const handleChange = e => {
     setInputValue(e.target.value);
   };
 
-  const onSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault();
-    addComment(inputValue);
+    onAddComment(inputValue);
     setInputValue('');
   };
 
   return (
     <div className="comments--add-comment">
-      <form onSubmit={onSubmit}>
-        <input type="text" placeholder="Add a comment..." value={inputValue} onChange={onChange} />
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Add a comment..."
+          value={inputValue}
+          onChange={handleChange}
+        />
       </form>
     </div>
   );

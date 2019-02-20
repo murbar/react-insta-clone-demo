@@ -11,7 +11,7 @@ class App extends Component {
     this.setState({ posts: dummyData });
   }
 
-  filterPosts = searchTerm => {
+  handleFilterPosts = searchTerm => {
     if (!searchTerm) {
       this.setState({
         filteredPosts: null,
@@ -37,7 +37,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <SearchBar onFilter={this.filterPosts} />
+        <SearchBar onFilterPosts={this.handleFilterPosts} />
         <PostsList posts={posts} filteredPosts={filteredPosts} searchTerm={searchTerm} />
       </div>
     );

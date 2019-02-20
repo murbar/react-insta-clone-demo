@@ -1,15 +1,15 @@
 import React from 'react';
 import './SearchBar.css';
 
-const SearchBar = ({ onFilter }) => {
-  const onChange = e => {
-    onFilter(e.target.value);
+const SearchBar = ({ onFilterPosts }) => {
+  const handleChange = e => {
+    onFilterPosts(e.target.value);
   };
 
   return (
     <div className="search-bar">
       logo
-      <input type="search" placeholder="Search" onChange={onChange} />
+      <input type="search" placeholder="Search" onChange={handleChange} />
       icons
     </div>
   );
