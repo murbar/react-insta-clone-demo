@@ -2,7 +2,7 @@ import React from 'react';
 import Comment from './Comment';
 import './comments.css';
 
-const CommentsContainer = ({ comments }) => {
+const CommentsList = ({ comments }) => {
   if (!comments.length) return null;
 
   return (
@@ -14,8 +14,8 @@ const CommentsContainer = ({ comments }) => {
   );
 };
 
-export default CommentsContainer;
+export default CommentsList;
 
-CommentsContainer.defaultProps = {
+CommentsList.defaultProps = {
   comments: []
 };

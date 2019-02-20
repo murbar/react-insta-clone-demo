@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Moment from 'react-moment';
 import PropTypes from 'prop-types';
-import CommentsContainer from '../comments/CommentsContainer';
+import CommentsList from '../comments/CommentsList';
 import PostBody from './PostBody';
 import './posts.css';
 import AddComment from '../comments/AddComment';
@@ -22,7 +22,7 @@ const Post = props => {
   return (
     <div className="post-container">
       <PostBody post={post} />
-      <CommentsContainer comments={post.comments} />
+      <CommentsList comments={post.comments} />
       <div className="post-time">
         <Moment fromNow parse="MMMM Do YYYY, hh:mm:ss a">
           {post.timestamp}
