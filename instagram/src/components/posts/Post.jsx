@@ -1,41 +1,47 @@
 import React, { useState } from 'react';
+import Moment from 'react-moment';
+import PropTypes from 'prop-types';
+import CommentsContainer from '../comments/CommentsContainer';
+import PostBody from './PostBody';
 import './posts.css';
+import AddComment from '../comments/AddComment';
 
 const Post = props => {
   const [post, setPost] = useState(props.post);
-  const [liked, setLiked] = useState(false);
 
-  const toggleLike = () => {
-    setLiked(prevProp => !prevProp);
-    const updatedPost = { ...post };
-    if (liked) {
-      updatedPost.likes--;
-    } else {
-      updatedPost.likes++;
-    }
-    setPost(updatedPost);
+  const addComment = comment => {
+    const newComment = {
+      username: 'murbar',
+      text: comment
+    };
+    const newPost = { ...post };
+    newPost.comments.push(newComment);
+    setPost(newPost);
   };
 
-  const likeButtonText = liked ? 'Unlike' : 'Like';
-
   return (
-    <div className="post-container-post">
-      <div className="post-head">
-        <img src={post.thumbnailUrl} alt={post.username} />
-        {post.username}
+    <div className="post-container">
+      <PostBody post={post} />
+      <CommentsContainer comments={post.comments} />
+      <div className="post-time">
+        <Moment fromNow parse="MMMM Do YYYY, hh:mm:ss a">
+          {post.timestamp}
+        </Moment>
       </div>
-      <div className="post-body">
-        <img src={post.imageUrl} alt="" />
-      </div>
-      <div className="post-foot">
-        <div className="post-controls">
-          <button onClick={toggleLike}>{likeButtonText}</button>{' '}
-          <button title="Add comment">Comment</button>
-        </div>
-        {post.likes} likes
-      </div>
+      <AddComment addComment={addComment} />
     </div>
   );
 };
 
 export default Post;
+
+Post.propTypes = {
+  post: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    imageUrl: PropTypes.string,
+    thumbnailUrl: PropTypes.string,
+    likes: PropTypes.number,
+    timestamp: PropTypes.string,
+    comments: PropTypes.array
+  })
+};
