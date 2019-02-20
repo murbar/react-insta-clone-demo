@@ -11,12 +11,14 @@ const PostsList = ({ posts, filteredPosts, searchTerm }) => {
 
   const displayedPosts = filteredPosts || posts;
   const showingResults = searchTerm && filteredPosts;
+  let postPluralize;
+  if (filteredPosts) postPluralize = filteredPosts.length === 1 ? 'post' : 'posts';
 
   return (
     <div className="posts-list">
       {showingResults && (
         <div className="posts-list--results-count">
-          {filteredPosts.length} post(s) matching <strong>"{searchTerm}"</strong>
+          {filteredPosts.length} {postPluralize} matching <strong>"{searchTerm}"</strong>
         </div>
       )}
       {displayedPosts.map(p => (
