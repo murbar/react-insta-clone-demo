@@ -3,7 +3,6 @@ import PostsPage from './components/posts/PostsPage';
 import authenticate from './authentication/authenticate';
 import LoginPage from './components/login/LoginPage';
 import styled from 'styled-components';
-import './App.css';
 
 const StyledAppDiv = styled.div`
   margin: 2rem auto;
