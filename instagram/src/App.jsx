@@ -4,16 +4,13 @@ import authenticate from './authentication/authenticate';
 import LoginPage from './components/login/LoginPage';
 import './App.css';
 
-class App extends React.Component {
-  // state = {};
-  render() {
-    return (
-      <div className="App">
-        <PostsPage />
-      </div>
-    );
-  }
-}
+const App = props => {
+  return (
+    <div className="App">
+      <PostsPage />
+    </div>
+  );
+};
 
 export default authenticate(App)(LoginPage);
 
