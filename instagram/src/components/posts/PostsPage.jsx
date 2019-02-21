@@ -29,10 +29,10 @@ const PostsPage = props => {
   };
 
   return (
-    <div className="posts-page">
+    <section>
       <SearchBar onFilterPosts={handleFilterPosts} />
       <PostsList posts={posts} filteredPosts={filteredPosts} searchTerm={searchTerm} />
-    </div>
+    </section>
   );
 };
 
