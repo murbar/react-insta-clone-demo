@@ -18,10 +18,3 @@ const App = props => {
 };
 
 export default authenticate(App)(LoginPage);
-
-/* 
-TODO
-- fuzzy search with https://fusejs.io/
-- persist to localStorage
-- delete comment functionality
-*/
