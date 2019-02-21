@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import dummyData from '../../dummy-data';
 import SearchBar from '../common/SearchBar';
 import PostsList from './PostsList';
-import './posts.css';
 
 class PostsPage extends Component {
   state = { posts: [], filteredPosts: null };

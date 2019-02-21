@@ -1,10 +1,23 @@
 import React, { useState } from 'react';
 import Moment from 'react-moment';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import CommentsList from '../comments/CommentsList';
 import PostBody from './PostBody';
-import './posts.css';
 import AddComment from '../comments/AddComment';
+
+const StyledPostDiv = styled.div`
+  border: 1px solid #ddd;
+  box-shadow: 0 0 0.3rem #ddd;
+  border-radius: 0.2rem;
+  margin-bottom: 2rem;
+`;
+
+const StyledPostTimeDiv = styled.div`
+  padding: 0 1rem 1rem;
+  font-weight: bold;
+  color: #aaa;
+`;
 
 const Post = props => {
   const [post, setPost] = useState(props.post);
@@ -32,16 +45,16 @@ const Post = props => {
   };
 
   return (
-    <div className="post">
+    <StyledPostDiv>
       <PostBody post={post} onToggleLike={handleToggleLike} liked={liked} />
       <CommentsList comments={post.comments} />
-      <div className="post--time">
+      <StyledPostTimeDiv>
         <Moment fromNow parse="MMMM Do YYYY, hh:mm:ss a">
           {post.timestamp}
         </Moment>
-      </div>
+      </StyledPostTimeDiv>
       <AddComment onAddComment={handleAddComment} />
-    </div>
+    </StyledPostDiv>
   );
 };
 

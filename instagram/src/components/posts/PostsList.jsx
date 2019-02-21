@@ -1,12 +1,18 @@
 import React from 'react';
 import Post from './Post';
+import styled from 'styled-components';
+
+const StyledResultsDiv = styled.div`
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+`;
 
 const PostsList = ({ posts, filteredPosts, searchTerm }) => {
   if (searchTerm && !filteredPosts)
     return (
-      <div className="posts-list--no-results">
+      <StyledResultsDiv>
         No posts with username matching <strong>"{searchTerm}"</strong>
-      </div>
+      </StyledResultsDiv>
     );
 
   const displayedPosts = filteredPosts || posts;
@@ -17,9 +23,9 @@ const PostsList = ({ posts, filteredPosts, searchTerm }) => {
   return (
     <div className="posts-list">
       {showingResults && (
-        <div className="posts-list--results-count">
+        <StyledResultsDiv>
           {filteredPosts.length} {postPluralize} matching <strong>"{searchTerm}"</strong>
-        </div>
+        </StyledResultsDiv>
       )}
       {displayedPosts.map(p => (
         <Post post={p} key={p.timestamp} />
