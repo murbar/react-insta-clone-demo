@@ -30,9 +30,7 @@ const PostBody = props => {
       </div>
       <div className="post-foot">
         <div className="post-controls">
-          <button className="like-button" onClick={toggleLike}>
-            <img src={likeButtonImgSrc} alt={likeButtonText} />
-          </button>
+          <LikeButton liked={liked} onLike={onToggleLike} />
         </div>
         {post.likes} likes
       </div>
