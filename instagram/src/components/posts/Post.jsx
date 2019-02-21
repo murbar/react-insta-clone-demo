@@ -8,6 +8,7 @@ import AddComment from '../comments/AddComment';
 
 const Post = props => {
   const [post, setPost] = useState(props.post);
+  const [liked, setLiked] = useState(false);
 
   const handleAddComment = comment => {
     const newComment = {
@@ -19,9 +20,20 @@ const Post = props => {
     setPost(newPost);
   };
 
+  const handleToggleLike = () => {
+    setLiked(prevProp => !prevProp);
+    const updatedPost = { ...post };
+    if (liked) {
+      updatedPost.likes--;
+    } else {
+      updatedPost.likes++;
+    }
+    setPost(updatedPost);
+  };
+
   return (
     <div className="post">
-      <PostBody post={post} />
+      <PostBody post={post} onToggleLike={handleToggleLike} liked={liked} />
       <CommentsList comments={post.comments} />
       <div className="post--time">
         <Moment fromNow parse="MMMM Do YYYY, hh:mm:ss a">

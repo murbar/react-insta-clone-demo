@@ -1,24 +1,8 @@
 import React, { useState } from 'react';
+import LikeButton from './LikeButton';
 import './posts.css';
 
-const PostBody = props => {
-  const [post, setPost] = useState(props.post);
-  const [liked, setLiked] = useState(false);
-
-  const toggleLike = () => {
-    setLiked(prevProp => !prevProp);
-    const updatedPost = { ...post };
-    if (liked) {
-      updatedPost.likes--;
-    } else {
-      updatedPost.likes++;
-    }
-    setPost(updatedPost);
-  };
-
-  const likeButtonText = liked ? 'Unlike' : 'Like';
-  const likeButtonImgSrc = liked ? '/heart-filled.svg' : '/heart.svg';
-
+const PostBody = ({ post, liked, onToggleLike }) => {
   return (
     <div className="post--container">
       <div className="post-head">
