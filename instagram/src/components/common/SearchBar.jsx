@@ -13,6 +13,9 @@ const StyledSearchBarDiv = styled.div`
 const StyledLogoDiv = styled.div`
   font-family: 'Pacifico', serif;
   font-size: 2rem;
+  span {
+    margin-left: 0.5rem;
+  }
 `;
 
 const StyledSearchInputDiv = styled.div`
@@ -58,7 +61,7 @@ const SearchBar = ({ onFilterPosts }) => {
   return (
     <StyledSearchBarDiv>
       <StyledLogoDiv>
-        Instaclone{' '}
+        Instaclone
         <span role="img" aria-label="Camera icon">
           📸
         </span>
