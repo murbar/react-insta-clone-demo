@@ -1,46 +1,40 @@
 import React from 'react';
 import styled from 'styled-components';
-// import './SearchBar.css';
 
 const StyledSearchBarDiv = styled.div`
   padding: 1rem 0;
   display: flex;
   align-items: center;
-
   > div {
     width: 33.33%;
   }
+`;
 
-  .logo {
-    font-family: 'Pacifico', serif;
-    font-size: 2rem;
-  }
+const StyledLogoDiv = styled.div`
+  font-family: 'Pacifico', serif;
+  font-size: 2rem;
+`;
 
-  .search {
-    text-align: center;
-  }
-
-  .search input {
+const StyledSearchInputDiv = styled.div`
+  text-align: center;
+  input {
     text-align: center;
     width: 100%;
     font-size: 1rem;
     background: transparent;
     border: none;
   }
-
-  .search input:focus {
+  input:focus {
     outline: none;
   }
-
-  .search input:focus::placeholder {
+  input:focus::placeholder {
     color: transparent;
   }
+`;
 
-  .logout {
-    text-align: right;
-  }
-
-  .logout button {
+const StyledLogoutDiv = styled.div`
+  text-align: right;
+  button {
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     border: none;
@@ -63,18 +57,18 @@ const SearchBar = ({ onFilterPosts }) => {
 
   return (
     <StyledSearchBarDiv>
-      <div className="logo">
+      <StyledLogoDiv>
         Instaclone{' '}
         <span role="img" aria-label="Camera icon">
           📸
         </span>
-      </div>
-      <div className="search">
+      </StyledLogoDiv>
+      <StyledSearchInputDiv>
         <input type="search" placeholder="Search" onChange={handleChange} />
-      </div>
-      <div className="logout">
+      </StyledSearchInputDiv>
+      <StyledLogoutDiv>
         <button onClick={handleLogout}>Logout</button>
-      </div>
+      </StyledLogoutDiv>
     </StyledSearchBarDiv>
   );
 };
