@@ -9,9 +9,10 @@ const LoginPage = props => {
   };
 
   const handleSubmit = e => {
-    // e.preventDefault();
+    e.preventDefault();
     console.log(username);
     localStorage.setItem('username', username);
+    window.location.reload();
   };
 
   return (
