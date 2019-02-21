@@ -1,46 +1,39 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import dummyData from '../../dummy-data';
 import SearchBar from '../common/SearchBar';
 import PostsList from './PostsList';
 
-class PostsPage extends Component {
-  state = { posts: [], filteredPosts: null };
+const PostsPage = props => {
+  const [posts, setPosts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState(null);
+  const [filteredPosts, setFilteredPosts] = useState(null);
 
-  componentDidMount() {
-    this.setState({ posts: dummyData });
-  }
+  useEffect(() => {
+    setPosts(dummyData);
+  }, []);
 
-  handleFilterPosts = searchTerm => {
+  const handleFilterPosts = searchTerm => {
     if (!searchTerm) {
-      this.setState({
-        filteredPosts: null,
-        searchTerm: null
-      });
+      setFilteredPosts(null);
+      setSearchTerm(null);
       return;
     }
 
-    let filtered = this.state.posts.filter(p => {
+    let filtered = posts.filter(p => {
       const normalizedUsername = p.username.toLowerCase();
       const normalizedSearchTerm = searchTerm.toLowerCase();
       return normalizedUsername.includes(normalizedSearchTerm);
     });
-    filtered = filtered.length ? filtered : null;
-    this.setState({
-      filteredPosts: filtered,
-      searchTerm
-    });
+    setFilteredPosts(filtered.length ? filtered : null);
+    setSearchTerm(searchTerm);
   };
 
-  render() {
-    const { posts, filteredPosts, searchTerm } = this.state;
-
-    return (
-      <div className="posts-page">
-        <SearchBar onFilterPosts={this.handleFilterPosts} />
-        <PostsList posts={posts} filteredPosts={filteredPosts} searchTerm={searchTerm} />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="posts-page">
+      <SearchBar onFilterPosts={handleFilterPosts} />
+      <PostsList posts={posts} filteredPosts={filteredPosts} searchTerm={searchTerm} />
+    </div>
+  );
+};
 
 export default PostsPage;
