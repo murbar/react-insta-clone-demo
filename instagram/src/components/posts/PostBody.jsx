@@ -31,7 +31,7 @@ const StyledPostFooterDiv = styled.div`
 
 const PostBody = ({ post, liked, onToggleLike }) => {
   return (
-    <div className="post--container">
+    <div>
       <StyledPostHeaderDiv>
         <img src={post.thumbnailUrl} alt={post.username} />
         {post.username}
@@ -40,7 +40,7 @@ const PostBody = ({ post, liked, onToggleLike }) => {
         <img src={post.imageUrl} alt="" />
       </StyledPostBodyDiv>
       <StyledPostFooterDiv>
-        <div className="post-controls">
+        <div>
           <LikeButton liked={liked} onLike={onToggleLike} />
         </div>
         {post.likes} likes
