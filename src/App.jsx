@@ -9,9 +9,18 @@ const StyledAppDiv = styled.div`
   width: 40rem;
 `;
 
+const StyledByLineDiv = styled.div`
+  padding: 1rem;
+  font-size: 0.8rem;
+`;
+
 const App = props => {
   return (
     <StyledAppDiv className="App">
+      <StyledByLineDiv>
+        A React demo by <a href="https://murbar.com">Joel Bartlett</a> <br />
+        <a href="https://github.com/murbar/react-todo-demo">See my code on GitHub</a>
+      </StyledByLineDiv>
       <PostsPage />
     </StyledAppDiv>
   );
