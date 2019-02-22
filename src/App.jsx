@@ -10,8 +10,9 @@ const StyledAppDiv = styled.div`
 `;
 
 const StyledByLineDiv = styled.div`
-  padding: 1rem;
+  margin-bottom: 1.5rem;
   font-size: 0.8rem;
+  text-align: center;
 `;
 
 const App = props => {
@@ -19,7 +20,7 @@ const App = props => {
     <StyledAppDiv className="App">
       <StyledByLineDiv>
         A React demo by <a href="https://murbar.com">Joel Bartlett</a> <br />
-        <a href="https://github.com/murbar/react-todo-demo">See my code on GitHub</a>
+        <a href="https://github.com/murbar/react-insta-clone-demo">See my code on GitHub</a>
       </StyledByLineDiv>
       <PostsPage />
     </StyledAppDiv>
