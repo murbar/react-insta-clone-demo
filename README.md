@@ -8,6 +8,17 @@ This project isn't too interesting, functionality-wise. We were tasked with buil
 
 - React tooling
   - Bootstrapping with `create-react-app`
+  - Prop type checking with `prop-types`
 - The component life cycle
+  - Mounting, Updating, Unmounting
+  - Where `contstructor` and `render` methods fit in
+  - Using `componentDidMount` to set state post render
 - Component composition patterns
-- CSS in JavaScript with `styled-components`
+  - Higher order components
+  - State Driven Development
+- CSS in JavaScript
+  - Importing style sheets in JS
+  - Reactstrap
+  - `styled-components` for centralizing component state, logic, and view in one location
+
+## Takeaways
