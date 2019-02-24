@@ -22,3 +22,6 @@ This project isn't too interesting, functionality-wise. We were tasked with buil
   - `styled-components` for centralizing component state, logic, and view in one location
 
 ## Takeaways
+
+What are PropTypes used for? Please describe why it's important to type check our data in JavaScript.
+PropTypes allow us to type check the data we pass into our components. This is more and more important as our application and amount of data being passed between components grows. PropTypes are lightweight and we can drop them into any place in our app that makes sense. They prevent a whole category of bugs and make our app more reliable and easier to maintain.
